@@ -106,15 +106,15 @@ end, { desc = "Format buffer" })
 ----------------------------------------------------------------------
 --- Conform
 ----------------------------------------------------------------------
-vim.keymap.set("n", "<C-c>", function()
+vim.keymap.set("n", "<leader>/", function()
   require("Comment.api").toggle.linewise.current()
-end, opts, { desc = "Comment line" })
-vim.keymap.set("v", "<C-c>", function()
+end, { desc = "Comment line" })
+vim.keymap.set("v", "<leader>/", function()
   local api = require("Comment.api")
   local esc = vim.api.nvim_replace_termcodes("<ESC>", true, false, true)
   vim.api.nvim_feedkeys(esc, "nx", false)
   api.toggle.linewise(vim.fn.visualmode())
-end, opts, { desc = "Comment lines" })
+end, { desc = "Comment lines" })
 
 ----------------------------------------------------------------------
 --- Nvim-tree
